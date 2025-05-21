@@ -34,4 +34,30 @@ This project focuses on analyzing and predicting flight delays using real-world 
 ---
 
 ## 📂 Directory Structure
+├── flight delay.zip
+├── data/ # Unzipped CSV files
+├── notebooks/ # Jupyter notebooks for analysis & modeling
+├── models/ # Saved models (if any)
+├── README.md
+└── requirements.txt # Python dependencies
+
+
+---
+
+## 🚀 Getting Started
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/flight-delay-analysis.git
+   cd flight-delay-analysis  
+
+
+python3 -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+
+unzip "flight delay.zip" -d data/
+
 
