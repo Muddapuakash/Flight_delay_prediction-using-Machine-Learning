@@ -1,0 +1,433 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  margin: 0;
+  color: #2d3748;
+}
+
+.titleIcon {
+  margin-right: 0.75rem;
+  color: #4299e1;
+}
+
+.flightInfo {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.flightDistance,
+.flightTime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.flightInfoLabel {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-bottom: 0.25rem;
+}
+
+.flightInfoValue {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background-color: #f8fafc;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.airportSelectors {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.airportSelector {
+  flex: 1;
+  min-width: 250px;
+}
+
+.airportLabel {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+}
+
+.airportIcon {
+  margin-right: 0.5rem;
+  color: #4299e1;
+}
+
+.airportSelect {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  background-color: white;
+  font-size: 1rem;
+  color: #2d3748;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%234a5568' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+}
+
+.swapButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #4299e1;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.swapButton:hover {
+  background-color: #3182ce;
+}
+
+.mapControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.mapStyleSelector {
+  flex: 1;
+  min-width: 200px;
+}
+
+.controlLabel {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+}
+
+.controlSelect {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  background-color: white;
+  font-size: 0.875rem;
+  color: #2d3748;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%234a5568' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25em 1.25em;
+}
+
+.weatherToggle {
+  display: flex;
+  align-items: center;
+}
+
+.toggleLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.toggleCheckbox {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+  background-color: #cbd5e0;
+  border-radius: 1rem;
+  margin: 0 0.75rem;
+  transition: background-color 0.2s ease;
+}
+
+.toggleSwitch:before {
+  position: absolute;
+  content: "";
+  height: 1.2rem;
+  width: 1.2rem;
+  left: 0.15rem;
+  bottom: 0.15rem;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.toggleCheckbox:checked + .toggleSwitch {
+  background-color: #4299e1;
+}
+
+.toggleCheckbox:checked + .toggleSwitch:before {
+  transform: translateX(1.5rem);
+}
+
+/* Map container structure - updated with new layout */
+.mapContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 200px);
+  min-height: 500px;
+}
+
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  height: 75%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.mapLoading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(247, 250, 252, 0.8);
+  z-index: 10;
+}
+
+.loadingSpinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #4299e1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Weather container now positioned below the map instead of absolute */
+.weatherContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  height: 25%;
+  gap: 1rem;
+  z-index: 5;
+}
+
+.weatherWidget {
+  flex: 1;
+  max-width: 48%;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.weatherWidget.origin {
+  margin-right: auto;
+}
+
+.weatherWidget.destination {
+  margin-left: auto;
+}
+
+.weatherHeader {
+  margin-bottom: 0.75rem;
+}
+
+.weatherHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #2d3748;
+}
+
+.airportName {
+  display: block;
+  font-size: 0.75rem;
+  color: #718096;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.weatherData {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.weatherIcon {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  color: #4299e1;
+}
+
+.weatherDetails {
+  flex: 1;
+}
+
+.temperature {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.25rem;
+}
+
+.feelsLike {
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: #718096;
+  display: block;
+}
+
+.weatherDescription {
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+}
+
+.weatherStats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 5px;
+}
+
+.weatherStat {
+  display: flex;
+  font-size: 0.75rem;
+}
+
+.statLabel {
+  color: #718096;
+  margin-right: 0.25rem;
+  font-weight: 500;
+}
+
+.statValue {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.weatherLoading, 
+.weatherError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100px;
+  color: #718096;
+  font-size: 0.875rem;
+  height: 100%;
+}
+
+.weatherError {
+  color: #e53e3e;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .flightInfo {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .weatherContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .weatherWidget {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .weatherWidget.origin,
+  .weatherWidget.destination {
+    margin: 0 0 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .airportSelectors {
+    flex-direction: column;
+  }
+  
+  .swapButton {
+    transform: rotate(90deg);
+    margin: 0.5rem 0;
+  }
+  
+  .mapContainer {
+    height: auto;
+  }
+  
+  .mapWrapper {
+    height: 300px;
+  }
+  
+  .weatherContainer {
+    height: auto;
+  }
+}

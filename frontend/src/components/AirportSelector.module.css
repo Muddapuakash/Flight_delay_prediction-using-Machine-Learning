@@ -1,0 +1,50 @@
+.selectorContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .label {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .icon {
+    margin-right: 0.5rem;
+    color: #3498db;
+  }
+  
+  .select {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    background-color: white;
+    transition: all 0.2s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+  
+  .select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  }
+  
+  .select:hover {
+    border-color: #cbd5e1;
+  }
+  
+  @media (max-width: 768px) {
+    .select {
+      font-size: 0.9rem;
+    }
+  }

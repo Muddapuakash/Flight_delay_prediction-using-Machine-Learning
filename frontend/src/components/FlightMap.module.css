@@ -1,0 +1,102 @@
+.mapContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Custom marker styles */
+  .customMarker {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .originMarker {
+    background-color: #3498db;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .destinationMarker {
+    background-color: #e74c3c;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .markerCode {
+    font-size: 11px;
+    letter-spacing: -0.5px;
+    text-align: center;
+  }
+  
+  /* Mapbox popup customization */
+  :global(.mapboxgl-popup-content) {
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  :global(.mapboxgl-popup-close-button) {
+    font-size: 16px;
+    color: #666;
+    padding: 4px;
+  }
+  
+  :global(.mapboxgl-ctrl-group) {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  :global(.mapboxgl-ctrl-group button) {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* Styling for hover effect on markers */
+  .customMarker:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+  }
+  
+  /* Add pulse effect to origin marker */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+    }
+  }
+  
+  .originMarker {
+    animation: pulse 2s infinite;
+  }
+  
+  /* Improve visibility of destination marker */
+  .destinationMarker {
+    position: relative;
+  }
+  
+  .destinationMarker::after {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid rgba(231, 76, 60, 0.4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

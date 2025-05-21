@@ -1,0 +1,195 @@
+.authContainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f7fa;
+    padding: 2rem 1rem;
+  }
+  
+  .authCard {
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+  }
+  
+  .logoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .logoIcon {
+    font-size: 2.5rem;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .authForm {
+    margin-bottom: 2rem;
+  }
+  
+  .inputGroup {
+    position: relative;
+    margin-bottom: 1.25rem;
+  }
+  
+  .inputIcon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #0f172a;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .input::placeholder {
+    color: #94a3b8;
+  }
+  
+  .forgotPassword {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #3b82f6;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+  }
+  
+  .forgotPassword:hover {
+    text-decoration: underline;
+  }
+  
+  .authButton {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .authButton:hover {
+    background-color: #2563eb;
+  }
+  
+  .authButton:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+  }
+  
+  .authFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .authFooter p {
+    color: #64748b;
+    margin: 0;
+  }
+  
+  .authLink {
+    color: #3b82f6;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .authLink:hover {
+    text-decoration: underline;
+  }
+  
+  .notification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .notification p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+  }
+  
+  .error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+  }
+  
+  .closeNotification {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 480px) {
+    .authCard {
+      padding: 2rem 1.5rem;
+    }
+    
+    .title {
+      font-size: 1.5rem;
+    }
+    
+    .subtitle {
+      font-size: 1.25rem;
+    }
+  }
